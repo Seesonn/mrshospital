@@ -3,6 +3,9 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import AnimatedButton from "../components/ui/AnimatedButton"
 import h3 from "../assets/h3.jpg"
+import a1 from "../assets/WorkingHour.jpg"
+import a2 from "../assets/emergency .jpg"
+import a3 from "../assets/AppointmentGuidelienes.jpg"
 
 
 const Appointments = () => {
@@ -973,132 +976,98 @@ const Appointments = () => {
       </section>
 
       {/* Information Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-md"
-            >
-              <div className="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Working Hours</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex justify-between">
-                  <span className="font-medium">Monday - Friday:</span>
-                  <span>8:00am - 7:00pm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="font-medium">Saturday:</span>
-                  <span>9:00am - 6:00pm</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="font-medium">Sunday:</span>
-                  <span>10:00am - 4:00pm</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-md"
-            >
-              <div className="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Emergency Cases</h3>
-              <p className="text-gray-600 mb-3">
-                For emergency cases, please call our emergency hotline. Our team is available 24/7 to assist you.
-              </p>
-              <p className="text-2xl font-bold text-primary">1-800-1234-567</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-md"
-            >
-              <div className="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Appointment Guidelines</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Arrive 15 minutes early</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Bring insurance card and ID</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Bring list of current medications</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>24-hour cancellation notice required</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
+      
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Working Hours Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="bg-white p-6 rounded-lg shadow-md"
+      >
+        <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-primary border-opacity-30">
+          <img 
+            src={a1} 
+            alt="Clock icon"
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
+        <h3 className="text-xl font-bold mb-3">Working Hours</h3>
+        <ul className="space-y-2 text-gray-600">
+          {[
+            { day: "Monday - Friday", time: "8:00am - 7:00pm" },
+            { day: "Saturday", time: "9:00am - 6:00pm" },
+            { day: "Sunday", time: "10:00am - 4:00pm" }
+          ].map((item, index) => (
+            <li key={index} className="flex items-start">
+              <div className="w-2 h-2 mt-2 mr-2 rounded-full bg-primary"></div>
+              <div className="flex justify-between flex-1">
+                <span className="font-medium">{item.day}:</span>
+                <span>{item.time}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
 
+      {/* Emergency Cases Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="bg-white p-6 rounded-lg shadow-md"
+      >
+        <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-primary border-opacity-30">
+          <img 
+            src={a2} 
+            alt="Phone icon"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h3 className="text-xl font-bold mb-3">Emergency Cases</h3>
+        <p className="text-gray-600 mb-3">
+          For emergency cases, please call our emergency hotline. Our team is available 24/7 to assist you.
+        </p>
+        <p className="text-2xl font-bold text-primary">+977 9764453354</p>
+      </motion.div>
+
+      {/* Appointment Guidelines Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="bg-white p-6 rounded-lg shadow-md"
+      >
+        <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-primary border-opacity-30">
+          <img 
+            src={a3}
+            alt="Appointment icon"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h3 className="text-xl font-bold mb-3">Appointment Guidelines</h3>
+        <ul className="space-y-2 text-gray-600">
+          {[
+            "Arrive 15 minutes early",
+            "Bring insurance card and ID",
+            "Bring list of current medications",
+            "24-hour cancellation notice required"
+          ].map((item, index) => (
+            <li key={index} className="flex items-start">
+              <div className="w-2 h-2 mt-2 mr-2 rounded-full bg-primary"></div>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+    </div>
+  </div>
+</section>
       {/* FAQ Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
