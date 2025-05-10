@@ -9,7 +9,7 @@ import FloatingIcon from "../components/ui/FloatingIcon"
 import HeroSlider from "../components/HeroSlider"
 import Gallery from "../components/Gallery"
 import useScrollAnimation from "../hooks/useScrollAnimation"
-import VideoSection from "../components/VideoSection"
+// import VideoSection from "../components/VideoSection"
 import cardiolody from "../assets/cardiology.jpg"
 import diagnostic from "../assets/diagnostic.jpg"
 import ECG from "../assets/ECG.jpg"
@@ -268,7 +268,7 @@ const Home = () => {
       <ServiceSection services={services} />
       {/* Gallery Section */}
       <Gallery />
-      <VideoSection/>
+      {/* <VideoSection/> */}
 
     </div>
   )

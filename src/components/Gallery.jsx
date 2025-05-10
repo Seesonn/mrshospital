@@ -18,43 +18,42 @@ const Gallery = () => {
     {
       id: 1,
       src: gb1,
-      alt: "Modern Hospital Reception",
+      
       
     },
     {
       id: 2,
       src: gb2,
-      alt: "Advanced MRI Machine",
+      
      
     },
     {
       id: 3,
       src: gb3,
-      alt: "Surgical Procedure",
+     
       
     },
     {
       id: 4,
       src: gb4,
-      alt: "Medical Team Meeting",
+      
      
     },
     {
       id: 5,
       src: gb5,
-      alt: "Patient Room",
     
     },
     {
       id: 6,
       src: gb6,
-      alt: "X-Ray Equipment",
+     
       
     },
     {
       id: 7,
       src: gb7,
-      alt: "Physical Therapy",
+      
      
     }
   ]
@@ -111,7 +110,7 @@ const Gallery = () => {
               }`}>
                 <img
                   src={image.src}
-                  alt={image.alt}
+                  // alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   loading="lazy"
                 />
@@ -165,9 +164,9 @@ const Gallery = () => {
                 alt={selectedImage.alt}
                 className="max-w-full max-h-[80vh] object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
+              {/* <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
                 <p className="text-lg">{selectedImage.alt}</p>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
