@@ -96,9 +96,9 @@ const Appointments = () => {
       }
     }
 
-    // Update available doctors based on department
+    
     if (name === "department") {
-      // Reset doctor selection when department changes
+      
       setFormData({ ...formData, [name]: value, doctor: "" })
     }
   }
@@ -115,9 +115,9 @@ const Appointments = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Submit form logic would go here
+ 
     alert("Appointment booked successfully!")
-    // Reset form or redirect
+ 
   }
 
   const departments = [
@@ -279,7 +279,7 @@ const Appointments = () => {
           </motion.div>
         </div>
 
-        {/* <ModernWaveDivider position="bottom" color="#ffffff" height={70} /> */}
+       
       </section>
 
       {/* Appointment Form Section */}
@@ -465,12 +465,12 @@ const Appointments = () => {
                               }`}
                             >
                               {formData.appointmentType === "regular" && (
-                                <div className="w-3 h-3 rounded-full bg-primary"></div>
+                                <div className="w-3 h-3 rounded-full  bg-primary"></div>
                               )}
                             </div>
-                            <span className="ml-2 font-medium">Regular Visit</span>
+                            <span className="ml-2 text-unique font-medium">Regular Visit</span>
                           </div>
-                          <p className="text-sm text-gray-600">Standard consultation with a doctor</p>
+                          <p className="text-sm text-unique ">Standard consultation with a doctor</p>
                         </div>
 
                         <div
@@ -491,9 +491,9 @@ const Appointments = () => {
                                 <div className="w-3 h-3 rounded-full bg-primary"></div>
                               )}
                             </div>
-                            <span className="ml-2 font-medium">Specialist Consultation</span>
+                            <span className="ml-2 text-unique  font-medium">Specialist Consultation</span>
                           </div>
-                          <p className="text-sm text-gray-600">Consultation with a specialist doctor</p>
+                          <p className="text-sm text-unique ">Consultation with a specialist doctor</p>
                         </div>
 
                         <div
@@ -514,9 +514,9 @@ const Appointments = () => {
                                 <div className="w-3 h-3 rounded-full bg-primary"></div>
                               )}
                             </div>
-                            <span className="ml-2 font-medium">Health Package</span>
+                            <span className="ml-2 text-unique font-medium">Health Package</span>
                           </div>
-                          <p className="text-sm text-gray-600">Comprehensive health checkup package</p>
+                          <p className="text-sm text-unique ">Comprehensive health checkup package</p>
                         </div>
                       </div>
                     </div>
