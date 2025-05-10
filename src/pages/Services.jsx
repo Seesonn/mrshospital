@@ -10,7 +10,7 @@ import ECG from "../assets/ECG.jpg";
 import neurology from "../assets/neurology.jpg";
 import Nurseimage from "../assets/NurseImage.jpg";
 import xray from "../assets/X-ray.jpg";
-import doctor from "../assets/doctor.jpg";
+
 import microscope from "../assets/Microscope.jpg";
 import roche from "../assets/roche cobas machine .jpg";
 import labBoy from "../assets/labBoyExamingTheResult.jpg";
@@ -89,13 +89,7 @@ const Services = () => {
       description: "Participate in cutting-edge medical research studies.",
       link: "/services/research",
     },
-    {
-      id: 10,
-      image: doctor,
-      title: "General Medicine",
-      description: "Comprehensive primary care for all ages.",
-      link: "/services/general-medicine",
-    },
+    
   ];
 
   const filteredServices =
