@@ -8,6 +8,7 @@ import PackageCard from "../components/PackageCard"
 import FeaturedPackageCard from "../components/FeaturedPackageCard"
 import PackageFilter from "../components/PackageFilter"
 import PackageDetailsModal from "../components/PackageDetailsModal"
+import h4 from "../assets/h4.jpg"
 
 const Packages = () => {
   const [activeTab, setActiveTab] = useState("all")
@@ -171,14 +172,14 @@ const Packages = () => {
   // Render sections
   const renderHeroSection = () => (
     <section className="relative bg-primary text-white py-16 md:py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-  <img
-    src="https://imgs.search.brave.com/titcyRczIcuFxrIQ_yNZm67MMs4wp4Fbc6YdpEOAh-k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5tZWhybmV3cy5j/b20vZC8yMDI1LzA1/LzA1LzMvNTQ5MDE5/MC5qcGc_dHM9MTc0/NjQ0MjQ2NTU1Mg"
-    alt="Contact Us"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute inset-0 bg-primary opacity-70"></div>
-</div>
+     <div className="absolute inset-0 z-0">
+       <img
+        src={h4}
+         alt="Contact Us"
+         className="w-full h-full object-cover"
+       />
+       <div className="absolute inset-0 bg-primary opacity-70"></div>
+     </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

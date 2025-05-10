@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import AnimatedButton from "./ui/AnimatedButton"
 
 
+
 const getColorClasses = (color) => {
   const colorMap = {
     red: {

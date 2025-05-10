@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import AnimatedButton from "../components/ui/AnimatedButton"
+import h3 from "../assets/h3.jpg"
 
 
 const Appointments = () => {
@@ -255,11 +256,11 @@ const Appointments = () => {
       <section className="relative bg-primary text-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://imgs.search.brave.com/UOtEK61oqKRa51O--udkIM77PGtOmBirxkZo88GhOIA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/Y2luZS5maXUuZWR1/L19hc3NldHMvaW1h/Z2VzL2JlY29taW5n/LXZvbHVudGFyeS1m/YWN1bHR5LTIuanBl/Zw"
-            alt="Book Appointment"
-            className="w-full h-full object-cover opacity-20"
+           src={h3}
+            alt="Contact Us"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary bg-opacity-80"></div>
+          <div className="absolute inset-0 bg-primary opacity-70"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">

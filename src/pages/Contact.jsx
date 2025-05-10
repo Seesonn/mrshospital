@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedButton from "../components/ui/AnimatedButton";
+import h2 from "../assets/h2.jpg"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -68,7 +69,7 @@ const Contact = () => {
       <section className="relative bg-primary text-white py-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
   <img
-    src="https://imgs.search.brave.com/titcyRczIcuFxrIQ_yNZm67MMs4wp4Fbc6YdpEOAh-k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5tZWhybmV3cy5j/b20vZC8yMDI1LzA1/LzA1LzMvNTQ5MDE5/MC5qcGc_dHM9MTc0/NjQ0MjQ2NTU1Mg"
+    src={h2}
     alt="Contact Us"
     className="w-full h-full object-cover"
   />
