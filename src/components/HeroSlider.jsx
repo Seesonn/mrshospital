@@ -102,14 +102,14 @@ const HeroSlider = () => {
                 {index === currentSlide && (
                   <motion.div
                     key={`content-${index}`}
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 50 }}
+                    exit={{ opacity: 0, x: 30 }}
                     transition={{ duration: 0.6 }}
                     className="max-w-lg text-white slide-content"
                   >
                     <motion.h1
-                      initial={{ opacity: 0, y: -20 }}
+                      initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                       className="text-4xl md:text-5xl font-bold mb-4"
@@ -117,7 +117,7 @@ const HeroSlider = () => {
                       {slide.title}
                     </motion.h1>
                     <motion.p
-                      initial={{ opacity: 0, y: -20 }}
+                      initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
                       className="text-lg mb-6"
@@ -125,7 +125,7 @@ const HeroSlider = () => {
                       {slide.subtitle}
                     </motion.p>
                     <motion.div
-                      initial={{ opacity: 0, y: -20 }}
+                      initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
