@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedButton from "./ui/AnimatedButton";
+import h2 from "../assets/h2.jpg"
+import h3 from "../assets/h3.jpg"
+import h4 from "../assets/h4.jpg"
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,24 +12,21 @@ const HeroSlider = () => {
 
   const slides = [
     {
-      image:
-        "https://www.skppn.org.np/_next/image?url=https%3A%2F%2Fwww.skppn.org.np%2Fapi%2Fmedia%2Ffile%2F475414923_9291312310888973_7208302037116584524_n.jpg%3F2025-02-23T07%3A38%3A02.518Z&w=1920&q=100",
+      image: h3,
       title: "Take Care of Your Health",
       subtitle:
         "At Medina, we are dedicated to diagnosing all kinds of diseases.",
       buttonText: "MAKE AN APPOINTMENT",
     },
     {
-      image:
-        "https://www.skppn.org.np/_next/image?url=https%3A%2F%2Fwww.skppn.org.np%2Fapi%2Fmedia%2Ffile%2F475414923_9291312310888973_7208302037116584524_n.jpg%3F2025-02-23T07%3A38%3A02.518Z&w=1920&q=100",
+      image: h4,
       title: "Professional Medical Care",
       subtitle:
         "Our team of specialists provides the highest quality healthcare services.",
       buttonText: "LEARN MORE",
     },
     {
-      image:
-        "https://www.skppn.org.np/_next/image?url=https%3A%2F%2Fwww.skppn.org.np%2Fapi%2Fmedia%2Ffile%2F475414923_9291312310888973_7208302037116584524_n.jpg%3F2025-02-23T07%3A38%3A02.518Z&w=1920&q=100",
+      image: h2,
       title: "Advanced Diagnostic Services",
       subtitle: "State-of-the-art equipment for accurate and timely diagnosis.",
       buttonText: "VIEW SERVICES",
