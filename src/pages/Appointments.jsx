@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import AnimatedButton from "../components/ui/AnimatedButton"
-// import ModernWaveDivider from "../components/ui/ModernWaveDivider"
+
 
 const Appointments = () => {
   const [currentStep, setCurrentStep] = useState(1)

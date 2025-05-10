@@ -1,5 +1,4 @@
 "use client"
-
 import { useRef, useEffect, useState } from "react"
 import { FaPlay, FaPause } from "react-icons/fa"
 
