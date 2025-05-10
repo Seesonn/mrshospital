@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedButton from "../components/ui/AnimatedButton";
-import h2 from "../assets/h2.jpg"
+import h2 from "../assets/h2.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,14 +67,14 @@ const Contact = () => {
     <div className="pt-32 pb-20">
       {/* Hero Section */}
       <section className="relative bg-primary text-white py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-  <img
-    src={h2}
-    alt="Contact Us"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute inset-0 bg-primary opacity-70"></div>
-</div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src={h2}
+            alt="Contact Us"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary opacity-70"></div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -409,14 +409,18 @@ const Contact = () => {
           {/* Locations Tab */}
           {activeTab === "locations" && (
             <div>
-              <div className="w-full h-96 rounded-lg overflow-hidden shadow-xl">
+              <div className="w-full h-96 rounded-lg overflow-hidden shadow-xl relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0627224913823!2d-122.45163168468864!3d37.77747957975922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1620798962261!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.175497085545!2d87.2841078!3d26.6609569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6d0061863dc7%3A0xe9593d949a697997!2sMRS%20Pranami%20Hospital-%20Itahari!5e0!3m2!1sen!2snp!4v1712345678901!5m2!1sen!2snp"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen=""
+                  allowFullScreen
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps Location of MRS Pranami Hospital, Itahari"
+                  aria-label="Location of MRS Pranami Hospital on Google Maps"
+                  className="absolute top-0 left-0"
                 ></iframe>
               </div>
             </div>
