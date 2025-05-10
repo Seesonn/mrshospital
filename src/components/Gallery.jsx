@@ -1,6 +1,14 @@
 
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
+import gb1 from "../assets/gb1.jpg"
+import gb2 from "../assets/gb2.jpg"
+import gb3 from "../assets/gb3.jpg"
+import gb4 from "../assets/gb4.jpg"
+import gb5 from "../assets/gb5.jpg"
+import gb6 from "../assets/gb6.jpg"
+import gb7 from "../assets/gb7.jpg"
+
 
 const Gallery = () => {
   const galleryRef = useRef(null)
@@ -9,43 +17,43 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb1,
       alt: "Modern Hospital Reception",
       
     },
     {
       id: 2,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb2,
       alt: "Advanced MRI Machine",
      
     },
     {
       id: 3,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb3,
       alt: "Surgical Procedure",
       
     },
     {
       id: 4,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb4,
       alt: "Medical Team Meeting",
      
     },
     {
       id: 5,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb5,
       alt: "Patient Room",
     
     },
     {
       id: 6,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb6,
       alt: "X-Ray Equipment",
       
     },
     {
       id: 7,
-      src: "/placeholder.svg?height=600&width=800",
+      src: gb7,
       alt: "Physical Therapy",
      
     }
