@@ -19,10 +19,10 @@ const Footer = () => {
           >
             <div className="flex items-center mb-4">
               <img src={logo || "/placeholder.svg"} alt="Medina" className="h-10 bg-white p-1 rounded-md" />
-              <h3 className="text-xl font-bold ml-2">MRS PARNAM HOSPITAL</h3>
+              <h3 className="text-xl font-bold ml-2">MRS PARNAMI HOSPITAL</h3>
             </div>
             <p className="text-gray-200 mb-4">
-              Medina is a modern medical and healthcare center that provides quality services to all patients.
+            MRSPH ,modern medical and healthcare center that provides quality services to all patients.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">

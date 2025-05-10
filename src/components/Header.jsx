@@ -146,7 +146,7 @@ const Header = () => {
                 className="flex items-center"
               >
                 <img src={logo} alt="M.R.S. Pranami Hospital" className="h-12" />
-                <p className="text-xl font-semibold ml-2">MRS PARNAM HOSPITAL</p>
+                <p className="text-xl font-semibold ml-2">MRS PRANAMI HOSPITAL</p>
               </motion.div>
 
               <motion.div
@@ -225,7 +225,7 @@ const Header = () => {
               } transition-opacity duration-300`}
             >
               <img src={logo} alt="M.R.S. Pranami Hospital" className="h-8" />
-              <p className="text-base text-white font-semibold ml-2">MRS PARNAM HOSPITAL</p>
+              <p className="text-base text-white font-semibold ml-2">MRS PRANAMI HOSPITAL</p>
             </div>
 
             <div className="hidden md:flex">
