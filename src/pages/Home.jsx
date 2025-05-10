@@ -11,12 +11,12 @@ import Gallery from "../components/Gallery"
 import useScrollAnimation from "../hooks/useScrollAnimation"
 // import VideoSection from "../components/VideoSection"
 import cardiolody from "../assets/cardiology.jpg"
-import diagnostic from "../assets/diagnostic.jpg"
+// import diagnostic from "../assets/diagnostic.jpg"
 import ECG from "../assets/ECG.jpg"
 import neurology from "../assets/neurology.jpg"
 import Nurseimage from "../assets/NurseImage.jpg"
 import xray from "../assets/X-ray.jpg"
-import doctor from "../assets/doctor.jpg"
+
 import microscope from "../assets/Microscope.jpg"
 import roche from "../assets/roche cobas machine .jpg"
 import labBoy from "../assets/labBoyExamingTheResult.jpg"
@@ -48,13 +48,13 @@ const Home = () => {
       description: "Advanced imaging services including X-ray, CT scans, and MRIs.",
       link: "/services/radiology"
     },
-    {
-      id: 4,
-      image: diagnostic,
-      title: "Diagnostics",
-      description: "Complete laboratory testing for accurate disease detection.",
-      link: "/services/diagnostics"
-    },
+    // {
+    //   id: 4,
+    //   image: diagnostic,
+    //   title: "Diagnostics",
+    //   description: "Complete laboratory testing for accurate disease detection.",
+    //   link: "/services/diagnostics"
+    // },
     {
       id: 5,
       image: Nurseimage,
@@ -90,13 +90,7 @@ const Home = () => {
       description: "Participate in cutting-edge medical research studies.",
       link: "/services/research"
     },
-    {
-      id: 10,
-      image: doctor,
-      title: "General Medicine",
-      description: "Comprehensive primary care for all ages.",
-      link: "/services/general-medicine"
-    }
+    
   
   ]
 

@@ -5,7 +5,7 @@ import ServiceCard from "../components/ServiceCard";
 import AnimatedButton from "../components/ui/AnimatedButton";
 import mri from "../assets/MRI Machine.jpg"
 import cardiolody from "../assets/cardiology.jpg";
-import diagnostic from "../assets/diagnostic.jpg";
+// import diagnostic from "../assets/diagnostic.jpg";
 import ECG from "../assets/ECG.jpg";
 import neurology from "../assets/neurology.jpg";
 import Nurseimage from "../assets/NurseImage.jpg";
@@ -44,14 +44,14 @@ const Services = () => {
         "Advanced imaging services including X-ray, CT scans, and MRIs.",
       link: "/services/radiology",
     },
-    {
-      id: 4,
-      image: diagnostic,
-      title: "Diagnostics",
-      description:
-        "Complete laboratory testing for accurate disease detection.",
-      link: "/services/diagnostics",
-    },
+    // {
+    //   id: 4,
+    //   image: diagnostic,
+    //   title: "Diagnostics",
+    //   description:
+    //     "Complete laboratory testing for accurate disease detection.",
+    //   link: "/services/diagnostics",
+    // },
     {
       id: 5,
       image: Nurseimage,
