@@ -62,12 +62,7 @@ const FeaturedPackageCard = ({ package: pkg, onViewDetails, onBookNow }) => {
             >
               Book This Package
             </AnimatedButton>
-            <AnimatedButton
-              className="bg-white text-primary border border-primary hover:bg-gray-100 text-sm md:text-base py-2 px-4 md:py-3 md:px-6"
-              onClick={() => onViewDetails && onViewDetails(pkg)}
-            >
-              View Details
-            </AnimatedButton>
+            
           </div>
         </div>
         <div className="bg-red-500 flex items-center justify-center p-6 md:p-8 lg:p-0">
