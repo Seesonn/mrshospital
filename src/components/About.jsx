@@ -16,7 +16,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             MRS Pranami Hospital
           </h1>
           <div className="w-24 h-1 bg-secondary mx-auto mb-8"></div>
@@ -28,13 +28,13 @@ const AboutSection = () => {
         {/* Our Story */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-3xl font-bold text-primary mb-6">Our Story</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
             <div className="space-y-4 text-gray-700">
               <p>
                 Established under the divine inspiration of Shree Krishna Pranami Dharma, MRS Pranami Hospital began as a humble initiative to address the critical healthcare needs of Eastern Nepal.
@@ -46,7 +46,7 @@ const AboutSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
@@ -65,7 +65,7 @@ const AboutSection = () => {
         </div>
 
         {/* Divine Inspiration Section - Simplified */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-20">
+        {/* <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-20"> */}
           <div className="grid md:grid-cols-5">
             {/* Text Content */}
 
@@ -80,8 +80,8 @@ const AboutSection = () => {
             </div>
 
 
-                        <div className="md:col-span-3 p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-primary mb-6">
+            <div className="md:col-span-3 p-8 md:p-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 The Divine Inspiration
               </h2>
               
@@ -101,7 +101,7 @@ const AboutSection = () => {
             </div>
 
           </div>
-        </div>
+        {/* </div> */}
 
         {/* Mission & Vision with Fixed Background */}
         <div 
@@ -110,10 +110,10 @@ const AboutSection = () => {
         >
           <div className="absolute inset-0 bg-white bg-opacity-80"></div>
           <div className="relative p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">Mission & vision</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Mission & vision</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-md border-l-4 border-primary">
-                <h3 className="text-xl font-bold text-primary mb-3">Mission</h3>
+                <h3 className="text-xl font-bold text-secondary mb-3">Mission</h3>
                 <p className="text-gray-700">
                   To provide ethical, affordable healthcare that blends modern medicine with compassionate, spiritually-grounded service.
                 </p>
@@ -136,7 +136,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="bg-white rounded-2xl shadow-lg p-8 md:p-12"
         >
-          <h2 className="text-3xl font-bold text-primary mb-8 text-center">Our Core Values</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Core Values</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -162,7 +162,7 @@ const AboutSection = () => {
                 className="bg-gray-50 p-6 rounded-lg text-center border-t-4 border-secondary"
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
                 <p className="text-gray-700">{value.description}</p>
               </motion.div>
             ))}
