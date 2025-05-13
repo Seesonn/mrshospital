@@ -34,7 +34,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Our Story</h2>
             <div className="space-y-4 text-gray-700">
               <p>
                 Established under the divine inspiration of Shree Krishna Pranami Dharma, MRS Pranami Hospital began as a humble initiative to address the critical healthcare needs of Eastern Nepal.
@@ -64,9 +64,8 @@ const AboutSection = () => {
           </motion.div>
         </div>
 
-        {/* Divine Inspiration Section - Simplified */}
-        {/* <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-20"> */}
-          <div className="grid md:grid-cols-5">
+        
+          <div className="grid md:grid-cols-5 gap-12 items-center mb-20">
             {/* Text Content */}
 
             {/* Image */}
@@ -76,12 +75,12 @@ const AboutSection = () => {
                 alt="Spiritual foundation" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary opacity-30"></div>
+              <div className="absolute inset-0 "></div>
             </div>
 
 
             <div className="md:col-span-3 p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
                 The Divine Inspiration
               </h2>
               
@@ -101,7 +100,7 @@ const AboutSection = () => {
             </div>
 
           </div>
-        {/* </div> */}
+        
 
         {/* Mission & Vision with Fixed Background */}
         <div 
