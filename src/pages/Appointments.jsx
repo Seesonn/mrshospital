@@ -932,7 +932,7 @@ const Appointments = () => {
                             <li>Bring your insurance card and photo ID.</li>
                             <li>
                               If you need to cancel or reschedule, please give at least 24 hours notice by calling
-                              1-800-1234-567.
+                                +977 9764453354.
                             </li>
                             {formData.appointmentType === "package" && (
                               <li>
@@ -996,21 +996,10 @@ const Appointments = () => {
           />
         </div>
         <h3 className="text-xl font-bold mb-3">Working Hours</h3>
-        <ul className="space-y-2 text-gray-600">
-          {[
-            { day: "Monday - Friday", time: "8:00am - 7:00pm" },
-            { day: "Saturday", time: "9:00am - 6:00pm" },
-            { day: "Sunday", time: "10:00am - 4:00pm" }
-          ].map((item, index) => (
-            <li key={index} className="flex items-start">
-              <div className="w-2 h-2 mt-2 mr-2 rounded-full bg-primary"></div>
-              <div className="flex justify-between flex-1">
-                <span className="font-medium">{item.day}:</span>
-                <span>{item.time}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
+        
+          <p className="text-gray-600 mb-3">
+         24/7 Avaiblable to provide service
+        </p>
       </motion.div>
 
       {/* Emergency Cases Card */}
@@ -1084,7 +1073,7 @@ const Appointments = () => {
                 {
                   question: "How do I schedule an appointment?",
                   answer:
-                    "You can schedule an appointment through our online booking system, by calling our appointment line at 1-800-1234-567, or by visiting our reception desk in person.",
+                    "You can schedule an appointment through our online booking system, by calling our appointment line at   +977 9764453354, or by visiting our reception desk in person.",
                 },
                 {
                   question: "What should I bring to my appointment?",

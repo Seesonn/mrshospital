@@ -44,7 +44,7 @@ const Contact = () => {
     {
       question: "How do I schedule an appointment?",
       answer:
-        "You can schedule an appointment by calling our main number at 1-800-1234-567, using our online appointment booking system, or visiting one of our locations in person. We strive to accommodate urgent cases as quickly as possible.",
+        "You can schedule an appointment by calling our main number at   +977 9764453354, using our online appointment booking system, or visiting one of our locations in person. We strive to accommodate urgent cases as quickly as possible.",
     },
     {
       question: "What should I bring to my first appointment?",

@@ -29,7 +29,7 @@ const TeamPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6"> Team MRSPH</h1>
             <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg mb-8">
-             Mangal Radhika Sadananda Pranami Hospital is a premier multi-specialty healthcare institution committed to delivering high-quality, ethical, and affordable medical services to the community. Located in Itahari, Sunsari, Nepal, the hospital stands as a symbol of care, compassion, and clinical excellence — serving patients with dedication and integrity.
+ Avilable soon
 
             </p>
             

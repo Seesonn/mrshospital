@@ -416,7 +416,7 @@ const Header = () => {
                       />
                     </svg>
                     <a href="tel:+97725580930" className="text-white text-xs">
-                      +977-25-580930
+                      +977 9764453354
                     </a>
                   </div>
                   <div className="flex items-center">
