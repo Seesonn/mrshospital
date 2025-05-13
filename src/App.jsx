@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
+import AboutSection from "./components/About"
 
 import Contact from "./pages/Contact"
 import GalleryPage from "./pages/Gallerypage"
@@ -14,6 +15,9 @@ import Packages from "./pages/Packages"
 import EmergencyBanner from "./components/EmergencyBanner"
 import FloatingAppointmentButton from "./components/FloatingAppointmentButton"
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton"
+import AboutPage from "./pages/AboutPage"
+import TeamPage from "./pages/Team"
+
 
 const App = () => {
   useEffect(() => {
@@ -43,6 +47,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<AboutPage/>}/>
+             <Route path="/team" element={<TeamPage/>}/>
+            
            
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<GalleryPage />} />

@@ -234,7 +234,7 @@ const Home = () => {
               </h2>
               <div className="w-20 h-1 bg-primary mb-6"></div>
               <p className="text-gray-600 mb-6">
-                Medina offers the region's most comprehensive range of diagnostic services, from MRI to X-ray.
+                MRSPH offers the region's most comprehensive range of diagnostic services, from MRI to X-ray.
               </p>
               <AnimatedButton>FREE CONSULTATION</AnimatedButton>
             </motion.div>

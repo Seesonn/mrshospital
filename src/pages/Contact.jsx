@@ -315,8 +315,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-1">Email</h3>
-                      <p className="text-gray-600">info@medina.com</p>
-                      <p className="text-gray-600">support@medina.com</p>
+                      <p className="text-gray-600">mrsphospital@gmail.com</p>
+
                     </div>
                   </div>
 
@@ -339,13 +339,13 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-1">
-                        Working Hours
+                      Available 
                       </h3>
                       <p className="text-gray-600">
-                        Monday - Friday: 8:00am - 7:00pm
+                       24/7 for medical emergencies
+                      
                       </p>
-                      <p className="text-gray-600">Saturday: 9:00am - 6:00pm</p>
-                      <p className="text-gray-600">Sunday: 10:00am - 4:00pm</p>
+                     
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/mrsphospital"
                       className="bg-primary text-white p-2 rounded-full hover:bg-secondary transition-colors"
                     >
                       <svg
@@ -370,7 +370,7 @@ const Contact = () => {
                         ></path>
                       </svg>
                     </a>
-                    <a
+                    {/* <a
                       href="#"
                       className="bg-primary text-white p-2 rounded-full hover:bg-secondary transition-colors"
                     >
@@ -399,7 +399,7 @@ const Contact = () => {
                           clipRule="evenodd"
                         ></path>
                       </svg>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </motion.div>
