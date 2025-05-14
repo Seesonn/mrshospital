@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
-import logo from "../assets/mrs.svg"
+import logo from "../assets/mrs.png"
 
 const Footer = () => {
   return (
@@ -19,7 +19,7 @@ const Footer = () => {
           >
             <div className="flex items-center mb-4">
               <img src={logo || "/placeholder.svg"} alt="Medina" className="h-10 bg-white p-1 rounded-md" />
-              <h3 className="text-xl font-bold ml-2">MRS PARNAMI HOSPITAL</h3>
+              
             </div>
             <p className="text-gray-200 mb-4">
             MRSPH ,modern medical and healthcare center that provides quality services to all patients.

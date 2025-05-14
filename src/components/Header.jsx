@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
-import logo from "../assets/mrs.svg"
+import logo from "../assets/mrs.png"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -156,8 +156,8 @@ const Header = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex items-center"
               >
-                <img src={logo} alt="M.R.S. Pranami Hospital" className="h-10 md:h-12" />
-                <p className="text-lg md:text-xl font-semibold ml-2">MRS PRANAMI HOSPITAL</p>
+                <img src={logo} alt="M.R.S. Pranami Hospital" className="h-8 md:h-12" />
+                <p className="text-lg md:text-xl font-semibold ml-2"></p>
               </motion.div>
 
               <motion.div
@@ -252,8 +252,8 @@ const Header = () => {
             <div
               className={`flex items-center ${hideContact ? "opacity-100" : "opacity-0 md:hidden"} transition-opacity duration-300`}
             >
-              <img src={logo} alt="M.R.S. Pranami Hospital" className="h-8" />
-              <p className="text-sm md:text-base text-white font-semibold ml-2">MRS PRANAMI HOSPITAL</p>
+              <img src={logo} alt="M.R.S. Pranami Hospital"  className="h-8 bg-white p-1 rounded-md" />
+              <p className="text-sm md:text-base text-white font-semibold ml-2"></p>
             </div>
 
             <div className="hidden md:flex">
