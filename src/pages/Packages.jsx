@@ -305,7 +305,7 @@ const renderWhyChooseUs = () => (
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white p-6 rounded-lg shadow-md text-center"
+            className="bg-white p-6 rounded-xl border-2 border-gray-200 text-center"
           >
             <div className="flex justify-center mb-4">{feature.icon}</div>
             <h3 className="text-xl font-bold mb-3 text-gray-800">{feature.title}</h3>

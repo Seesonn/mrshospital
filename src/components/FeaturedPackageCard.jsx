@@ -13,7 +13,7 @@ const FeaturedPackageCard = ({ package: pkg, onViewDetails, onBookNow }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white rounded-xl shadow-xl overflow-hidden max-w-5xl mx-auto package-card"
+      className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden max-w-5xl mx-auto package-card"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="p-6 md:p-8 lg:p-12">

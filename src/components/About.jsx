@@ -114,59 +114,55 @@ const AboutSection = () => {
               <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-md border-l-4 border-primary">
                 <h3 className="text-xl font-bold text-secondary mb-3">Mission</h3>
                 <p className="text-gray-700">
-                  To provide ethical, affordable healthcare that blends modern medicine with compassionate, spiritually-grounded service.
-                </p>
+To deliver exceptional, ethical healthcare through experienced specialists and advanced technology while keeping services affordable for all community members; to educate patients on preventive health; to expand access through strategic growth; and to maintain healing environments that respect both modern medicine and traditional values                </p>
               </div>
               <div className="bg-white bg-opacity-90 p-6 rounded-xl shadow-md border-l-4 border-secondary">
                 <h3 className="text-xl font-bold text-secondary mb-3">Vision</h3>
                 <p className="text-gray-700">
-                  To be Eastern Nepal's most trusted healthcare institution, renowned for clinical excellence within a healing environment.
-                </p>
+We envision transforming into Eastern Nepal's premier 500-bed multi-super specialty hospital that integrates world-class medical technology with affordable care, serving as a regional healthcare hub with centers of excellence in maternal-child health, chronic disease management, and surgical specialties, while maintaining our founding principles of community service and spiritual healing values that honor our connection to Shree Krishna Pranami Mandir.                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Values Section */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-lg p-8 md:p-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Core Values</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Divine Compassion",
-                icon: "❤️",
-                description: "Treating every patient with the love and respect we would offer to the divine."
-              },
-              {
-                title: "Service Excellence",
-                icon: "⭐",
-                description: "Providing the highest standard of care through continuous improvement."
-              },
-              {
-                title: "Community Spirit",
-                icon: "🤝",
-                description: "Working together as an extended family to serve our community."
-              }
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="bg-gray-50 p-6 rounded-lg text-center border-t-4 border-secondary"
-              >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
-                <p className="text-gray-700">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
+
+  
+   
+
+    
+
+    {/* Values List */}
+    <motion.div
+      
+      className=" bg-white mt-10 rounded-xl border-2 border-gray-200 p-8 md:p-10 max-w-4xl mx-auto"
+    >
+    <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Our Commitment</h2>
+      <ul className="space-y-4">
+        {[
+          "Compassionate patient-centered care",
+          "Medical excellence with integrity",
+          "Community trust & transparency",
+          "Affordable access for all",
+          "Spiritual harmony in healing"
+        ].map((item, index) => (
+          <motion.li
+            key={index}
+            
+            className="flex items-start"
+          >
+            <span className="flex-shrink-0 bg-primary/10 text-primary rounded-full p-1 mr-3 mt-1">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            </span>
+            <span className="text-gray-700 text-lg">{item}</span>
+          </motion.li>
+        ))}
+      </ul>
+    </motion.div>
+  
+
       </div>
     </section>
   );

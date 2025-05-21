@@ -15,7 +15,7 @@ const PackageFilter = ({ categories, activeCategory, onCategoryChange }) => {
           onClick={() => onCategoryChange(category.id)}
           className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
             activeCategory === category.id
-              ? "bg-primary text-white shadow-md"
+              ? "bg-primary text-white "
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
         >

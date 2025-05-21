@@ -68,7 +68,7 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", damping: 20 }}
-            className="bg-white rounded-xl shadow-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col my-8"
+            className="bg-white border-2 border-gray-200 w-full max-w-4xl max-h-[90vh] flex flex-col my-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}

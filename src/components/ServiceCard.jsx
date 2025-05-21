@@ -1,43 +1,58 @@
+import { motion } from "framer-motion";
 
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
-
-const ServiceCard = ({ image, title, description, link }) => {
+const ServiceCard = ({ image, title }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className="service-card bg-white rounded-lg shadow-lg overflow-hidden"
+     
+     
+      viewport={{ once: true, margin: "-20px" }}
+      className="w-full max-w-[300px] bg-white rounded-lg overflow-hidden flex flex-col border-2 border-gray-200 hover:border-gray-300 transition-colors duration-200"
     >
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={image || "/placeholder.svg?height=300&width=400"}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <h3 className="absolute bottom-4 left-6 text-xl font-bold text-white">{title}</h3>
+      {/* Image container */}
+      <div className="relative w-full aspect-[1/1] overflow-hidden border-b-2 border-gray-200">
+        {image ? (
+          <motion.img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover"
+            
+            
+            
+            onError={(e) => {
+              e.target.src = "/placeholder-service.jpg";
+              e.target.className = "w-full h-full object-contain p-6 bg-gray-50";
+            }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+            <svg
+              className="w-8 h-8 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+        )}
       </div>
-      <div className="p-6">
-        <p className="text-gray-600 mb-4">{description}</p>
-        <Link
-          to={link}
-          className="inline-flex items-center text-primary hover:text-secondary transition-colors font-medium"
-        >
-          Learn More
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-            <path
-              fillRule="evenodd"
-              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </Link>
+
+      {/* Title area */}
+      <div className="p-3  text-center bg-primary">
+        <h3 className="text-sm font-medium text-white line-clamp-2 leading-tight">
+          {title || "Service"}
+        </h3>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default ServiceCard
+export default ServiceCard;

@@ -123,7 +123,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={featureVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center"
+        className="bg-white rounded-xl border-2 border-gray-200 transition-shadow duration-300 p-6 text-center"
       >
         <div className="mb-6 flex justify-center">
           <motion.div 
@@ -149,7 +149,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={featureVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center"
+        className="bg-white rounded-xl border-2 border-gray-200 transition-shadow duration-300 p-6 text-center"
       >
         <div className="mb-6 flex justify-center">
           <motion.div 
@@ -175,7 +175,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={featureVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center"
+        className="bg-white rounded-xl border-2 border-gray-200 transition-shadow duration-300 p-6 text-center"
       >
         <div className="mb-6 flex justify-center">
           <motion.div 
@@ -200,7 +200,7 @@ const Home = () => {
 </section>
 
       {/* Diagnostic Section */}
-      <section className="py-16 bg-gray-100" ref={diagnosticRef}>
+      <section className="py-16 " ref={diagnosticRef}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
@@ -210,14 +210,13 @@ const Home = () => {
               className="order-2 lg:order-1"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-                All Kinds
+                Mangal Radhika Sadananda 
                 <br />
-                of Diagnostics
+               Pranami Hospital
               </h2>
               <div className="w-20 h-1 bg-primary mb-6"></div>
               <p className="text-gray-600 mb-6">
-                MRSPH offers the region's most comprehensive range of diagnostic services, from MRI to X-ray.
-              </p>
+Mangal Radhika Sadananda Pranami Hospital is a premier multi-specialty healthcare institution committed to delivering high-quality, ethical, and affordable medical services to the community. Located in Itahari, Sunsari, Nepal, the hospital stands as a symbol of care, compassion, and clinical excellence — serving patients with dedication and integrity.              </p>
               <AnimatedButton>FREE CONSULTATION</AnimatedButton>
             </motion.div>
 
