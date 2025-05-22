@@ -108,7 +108,7 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
             </div>
 
             {/* Tabs */}
-            <div className="flex border-b border-gray-200">
+            <div className="flex  rounded-xl border-b border-gray-200">
               <button
                 className={`flex-1 py-3 px-4 text-center font-medium ${
                   activeTab === "details"

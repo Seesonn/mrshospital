@@ -1,14 +1,11 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-
-import logo from "../assets/mrs.png"
+import logo from "../assets/mrs.png";
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-white relative">
-      
-
       <div className="container mx-auto px-4 pt-20 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div
@@ -18,15 +15,24 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center mb-4">
-              <img src={logo || "/placeholder.svg"} alt="Medina" className="h-10 bg-white p-1 rounded-md" />
-              
+              <img
+                src={logo || "/placeholder.svg"}
+                alt="Medina"
+                className="h-10 bg-white p-1 rounded-md"
+              />
             </div>
-            <p className="text-gray-200 mb-4">
-            MRSPH ,modern medical and healthcare center that provides quality services to all patients.
-            </p>
+            <p className="text-gray-200  mb-4">सेवा नै धर्म हो </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/mrsphospital" className="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <a
+                href="https://www.facebook.com/mrsphospital"
+                className="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
                   <path
                     fillRule="evenodd"
                     d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
@@ -67,27 +73,41 @@ const Footer = () => {
             viewport={{ once: true }}
             className="md:ml-8"
           >
-            <h3 className="text-lg font-bold mb-4 border-b border-white border-opacity-30 pb-2">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 border-b border-white border-opacity-30 pb-2">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Home
                 </Link>
               </li>
-              
+
               <li>
-                <Link to="/services" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Services
                 </Link>
               </li>
-             
+
               <li>
-                <Link to="/appointments" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/appointments"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Appointments
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/contact"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Contact Us
                 </Link>
               </li>
@@ -100,35 +120,55 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-bold mb-4 border-b border-white border-opacity-30 pb-2">Our Services</h3>
+            <h3 className="text-lg font-bold mb-4 border-b border-white border-opacity-30 pb-2">
+              Our Services
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/cardiology" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services/cardiology"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Cardiology
                 </Link>
               </li>
               <li>
-                <Link to="/services/neurology" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services/neurology"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Neurology
                 </Link>
               </li>
               <li>
-                <Link to="/services/pediatrics" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services/pediatrics"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Pediatrics
                 </Link>
               </li>
               <li>
-                <Link to="/services/pulmonology" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services/pulmonology"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Pulmonology
                 </Link>
               </li>
               <li>
-                <Link to="/services/traumatology" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services/traumatology"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Traumatology
                 </Link>
               </li>
               <li>
-                <Link to="/services/diagnostics" className="hover:text-gray-300 transition-colors flex items-center">
+                <Link
+                  to="/services/diagnostics"
+                  className="hover:text-gray-300 transition-colors flex items-center"
+                >
                   <span className="mr-2">›</span> Diagnostics
                 </Link>
               </li>
@@ -141,7 +181,6 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            
             <div className="mt-6 bg-white bg-opacity-10 p-4 rounded-lg">
               <h4 className="font-semibold mb-2">Emergency Cases</h4>
               <p className="text-xl font-bold">+977 9764453354</p>
@@ -155,7 +194,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
