@@ -6,7 +6,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
-import AboutSection from "./components/About"
+
 
 import Contact from "./pages/Contact"
 import GalleryPage from "./pages/Gallerypage"
