@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
@@ -8,25 +7,60 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [hideContact, setHideContact] = useState(false)
+  const [hideNav, setHideNav] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
   const location = useLocation()
   const headerRef = useRef(null)
+  const scrollTimeout = useRef(null)
+
+  // Smooth scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+    setIsOpen(false)
+  }, [location.pathname])
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      setScrolled(currentScrollY > 20)
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setHideContact(true)
-      } else {
-        setHideContact(false)
+
+      // Clear any existing timeout
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current)
       }
-      setLastScrollY(currentScrollY)
+
+      // Set a timeout to prevent rapid changes
+      scrollTimeout.current = setTimeout(() => {
+        setScrolled(currentScrollY > 20)
+
+        // Handle navigation visibility based on scroll direction
+        if (currentScrollY > 150) { // Increased threshold for better UX
+          if (currentScrollY > lastScrollY + 15) { // Increased threshold to prevent jitter
+            setHideNav(true)
+            setHideContact(true)
+          } else if (currentScrollY < lastScrollY - 15) {
+            setHideNav(false)
+            // Only show contact when near top
+            setHideContact(currentScrollY > 100)
+          }
+        } else {
+          setHideNav(false)
+          setHideContact(false)
+        }
+
+        setLastScrollY(currentScrollY)
+      }, 10) // Small timeout for performance
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current)
+      }
+    }
   }, [lastScrollY])
 
   useEffect(() => {
@@ -133,21 +167,28 @@ const Header = () => {
   ]
 
   return (
-    <header
+    <motion.header
       ref={headerRef}
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-white shadow-md py-1 md:py-2" : "bg-white py-2 md:py-3"
-      }`}
+      initial={{ y: 0 }}
+      animate={{
+        y: hideNav ? -100 : 0,
+        transition: {
+          duration: 0.4,
+          ease: [0.4, 0, 0.2, 1]
+        }
+      }}
+      className={`fixed w-full z-50 transition-all duration-500 border-b-2 border-gray-200 ${scrolled ? "bg-white py-1 md:py-2" : "bg-white py-2 md:py-3"
+        }`}
     >
       <div className="container mx-auto px-2 md:px-4">
         {/* Top Bar */}
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {!hideContact && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               className="flex flex-col md:flex-row justify-between items-center mb-2 md:mb-4 overflow-hidden"
             >
               <motion.div
@@ -214,22 +255,22 @@ const Header = () => {
 
                 {/* Lab Report Button - Smaller in mobile */}
                 <div className="flex items-center">
-                  <Link 
-                    to="/lab-reports" 
+                  <Link
+                    to="/lab-reports"
                     className="flex items-center bg-primary rounded-lg px-2  md:px-4 md:py-2 text-white transition-colors duration-300 text-xs md:text-sm"
                   >
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-3 w-3 md:h-4 md:w-4 mr-1" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3 w-3 md:h-4 md:w-4 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                       />
                     </svg>
                     <span>Lab Reports</span>
@@ -242,28 +283,46 @@ const Header = () => {
 
         {/* Navigation */}
         <motion.nav
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          className="bg-primary rounded-md shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: {
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1]
+            }
+          }}
+          className={`bg-primary rounded-lg border border-gray-200 transition-all duration-300 ease-in-out`}
         >
-          <div className="flex justify-between items-center px-2 md:px-4">
-            {/* Show logo when scrolled */}
-            <div
-              className={`flex items-center ${hideContact ? "opacity-100" : "opacity-0 md:hidden"} transition-opacity duration-300`}
+          <div className={`flex justify-between items-center px-2 md:px-4 transition-all duration-300`}>
+            {/* Show logo when contact is hidden */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: hideContact ? 1 : 0,
+                scale: hideContact ? 1 : 0.8,
+                transition: {
+                  duration: 0.3,
+                  ease: [0.4, 0, 0.2, 1]
+                }
+              }}
+              className="flex items-center"
             >
-              <img src={logo} alt="M.R.S. Pranami Hospital"  className="h-8 bg-white p-1 rounded-md" />
+              <img
+                src={logo}
+                alt="M.R.S. Pranami Hospital"
+                className={`h-8 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                  }`}
+              />
               <p className="text-sm md:text-base text-white font-semibold ml-2"></p>
-            </div>
+            </motion.div>
 
             <div className="hidden md:flex">
               {navLinks.map((link, index) => (
                 <Link
                   key={index}
                   to={link.path}
-                  className={`px-3 lg:px-4 py-3 md:py-4 text-white transition-colors duration-300 relative group ${
-                    location.pathname === link.path ? "bg-secondary" : ""
-                  }`}
+                  className={`px-3 lg:px-4 py-3 md:py-4 text-white transition-colors duration-300 relative group ${location.pathname === link.path ? "bg-secondary" : ""
+                    }`}
                 >
                   <span className="text-sm md:text-base">{link.name}</span>
                   <motion.div
@@ -286,23 +345,23 @@ const Header = () => {
             <div className="flex items-center">
               {/* Lab Report Link - Mobile (shown when header is collapsed) */}
               <div className={`md:hidden ${hideContact ? "block" : "hidden"}`}>
-                <Link 
-                  to="/lab-reports" 
+                <Link
+                  to="/lab-reports"
                   className="flex items-center p-2 text-white"
                   aria-label="Lab Reports"
                 >
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     />
                   </svg>
                 </Link>
@@ -356,125 +415,111 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden overflow-hidden bg-white bg-opacity-10 backdrop-blur-sm rounded-b-md"
-              >
-                <div className="grid grid-cols-3 gap-1 p-2">
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <Link
-                        to={link.path}
-                        className={`flex flex-col items-center justify-center p-2 rounded-lg ${
-                          location.pathname === link.path ? "bg-secondary" : "bg-white bg-opacity-10"
+          {isOpen && (
+            <div className="md:hidden bg-white bg-opacity-10 backdrop-blur-sm rounded-b-md">
+              <div className="grid grid-cols-3 gap-1 p-2">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={link.path}
+                      className={`flex flex-col items-center justify-center p-2 rounded-lg ${location.pathname === link.path ? "bg-secondary" : "bg-white bg-opacity-10"
                         } transition-colors duration-300`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-1"
-                        >
-                          {link.icon}
-                        </motion.div>
-                        <span className="text-white text-xs font-medium">{link.name}</span>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Mobile contact info */}
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="px-3 py-2 bg-white bg-opacity-10 mt-1 rounded-lg mx-2 mb-3"
-                >
-                  <div className="flex items-center mb-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-white mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                    <a href="tel:+97725580930" className="text-white text-xs">
-                      +977 9764453354
-                    </a>
-                  </div>
-                  <div className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-white mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="text-white text-xs">Muktidham, Itahari, Sunsari, Nepal</span>
-                  </div>
-                  
-                  {/* Lab Report Link - Mobile */}
-                  <div className="mt-2">
-                    <Link 
-                      to="/lab-reports" 
-                      className="flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg py-1 px-3 transition-colors duration-300 text-xs"
                       onClick={() => setIsOpen(false)}
                     >
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        className="h-3 w-3 mr-1" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-1"
                       >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-                        />
-                      </svg>
-                      <span>Lab Reports</span>
+                        {link.icon}
+                      </motion.div>
+                      <span className="text-white text-xs font-medium">{link.name}</span>
                     </Link>
-                  </div>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Mobile contact info */}
+              <div className="px-3 py-2 bg-white bg-opacity-10 mt-1 rounded-lg mx-2 mb-3">
+                <div className="flex items-center mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-white mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  <a href="tel:+97725580930" className="text-white text-xs">
+                    +977 9764453354
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-white mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span className="text-white text-xs">Muktidham, Itahari, Sunsari, Nepal</span>
+                </div>
+
+                {/* Lab Report Link - Mobile */}
+                <div className="mt-2">
+                  <Link
+                    to="/lab-reports"
+                    className="flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg py-1 px-3 transition-colors duration-300 text-xs"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3 w-3 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                    <span>Lab Reports</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </motion.nav>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
-export default Header
+export default Header 

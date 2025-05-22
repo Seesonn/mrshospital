@@ -1,5 +1,3 @@
-
-
 import { useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
@@ -12,7 +10,6 @@ import Contact from "./pages/Contact"
 import GalleryPage from "./pages/Gallerypage"
 import Appointments from "./pages/Appointments"
 import Packages from "./pages/Packages"
-import EmergencyBanner from "./components/EmergencyBanner"
 import FloatingAppointmentButton from "./components/FloatingAppointmentButton"
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton"
 import AboutPage from "./pages/AboutPage"
@@ -41,16 +38,15 @@ const App = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <EmergencyBanner />
         <Header />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<AboutPage/>}/>
-             <Route path="/team" element={<TeamPage/>}/>
-            
-           
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/team" element={<TeamPage />} />
+
+
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/appointments" element={<Appointments />} />
