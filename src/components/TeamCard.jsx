@@ -6,7 +6,7 @@ const TeamCard = ({ doctor }) => {
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20px" }}
-      className="bg-white overflow-hidden flex flex-col border border-gray-200 "
+      className="bg-white overflow-hidden flex flex-col border border-gray-200 rounded-lg "
     >
       {/* Image container */}
       <div className="relative w-full  overflow-hidden">
