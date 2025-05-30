@@ -93,7 +93,7 @@ const Header = () => {
       ),
     },
     {
-      name: "ABOUT US",
+      name: "ABOUT",
       path: "/about",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -129,7 +129,7 @@ const Header = () => {
       ),
     },
     {
-      name: "OUR TEAM",
+      name: " TEAM",
       path: "/team",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
