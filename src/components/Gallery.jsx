@@ -78,7 +78,7 @@ const Gallery = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Medical Schemes</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800"> Schemes</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Explore our state-of-the-art medical facilities and equipment through our medical schemes.
