@@ -13,7 +13,7 @@ import FloatingAppointmentButton from "./components/FloatingAppointmentButton"
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton"
 import AboutPage from "./pages/AboutPage"
 import TeamPage from "./pages/Team"
-
+import ScrollToTop from "./components/ScrollToTop"
 
 const App = () => {
   useEffect(() => {
@@ -37,6 +37,7 @@ const App = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
+        <ScrollToTop />
         <Header />
         <main className="flex-grow">
           <Routes>

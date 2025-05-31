@@ -13,12 +13,7 @@ const Header = () => {
   const headerRef = useRef(null)
   const scrollTimeout = useRef(null)
 
-  // Smooth scroll to top when route changes
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
     setIsOpen(false)
   }, [location.pathname])
 
@@ -73,10 +68,6 @@ const Header = () => {
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [isOpen])
-
-  useEffect(() => {
-    setIsOpen(false)
-  }, [location])
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
