@@ -30,7 +30,7 @@ const ServiceSection = ({ services }) => {
               title={service.title}
               description={service.description}
               link={service.link}
-              delay={index * 0.1} 
+              delay={index * 0.1}
             />
           ))}
         </div>

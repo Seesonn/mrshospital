@@ -1,121 +1,128 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ServiceCard from "../components/ServiceCard";
-import AnimatedButton from "../components/ui/AnimatedButton";
-import mri from "../assets/MRI Machine.jpg"
-import cardiolody from "../assets/cardiology.jpg";
-// import diagnostic from "../assets/diagnostic.jpg";
-import ECG from "../assets/ECG.jpg";
-import neurology from "../assets/neurology.jpg";
-import Nurseimage from "../assets/NurseImage.jpg";
-import xray from "../assets/X-ray.jpg";
+import h3 from "../assets/h3.jpg";
 
-import microscope from "../assets/Microscope.jpg";
-import roche from "../assets/roche cobas machine .jpg";
-import labBoy from "../assets/labBoyExamingTheResult.jpg";
-import { Import } from "lucide-react";
-import ServiceSection from "../components/ServiceSection";
+const ServicesPage = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
 
-const Services = () => {
-  const [activeTab, setActiveTab] = useState("all");
-
-  const services = [
-    {
-      id: 1,
-      image: cardiolody,
-      title: "Cardiology",
-      description:
-        "Comprehensive heart care with advanced diagnostic tools and treatments.",
-      link: "/services/cardiology",
-    },
-    {
-      id: 2,
-      image: neurology,
-      title: "Neurology",
-      description: "Specialized care for brain and nervous system disorders.",
-      link: "/services/neurology",
-    },
-    {
-      id: 3,
-      image: xray,
-      title: "Radiology",
-      description:
-        "Advanced imaging services including X-ray, CT scans, and MRIs.",
-      link: "/services/radiology",
-    },
-    // {
-    //   id: 4,
-    //   image: diagnostic,
-    //   title: "Diagnostics",
-    //   description:
-    //     "Complete laboratory testing for accurate disease detection.",
-    //   link: "/services/diagnostics",
-    // },
-    {
-      id: 5,
-      image: Nurseimage,
-      title: "Nursing Care",
-      description:
-        "Professional nursing services for inpatient and outpatient care.",
-      link: "/services/nursing",
-    },
-    {
-      id: 6,
-      image: microscope,
-      title: "Pathology",
-      description: "Advanced microscopic analysis for disease diagnosis.",
-      link: "/services/pathology",
-    },
-    {
-      id: 7,
-      image: ECG,
-      title: "Cardiac Diagnostics",
-      description:
-        "ECG and other cardiac function tests with expert interpretation.",
-      link: "/services/cardiac-diagnostics",
-    },
-    {
-      id: 8,
-      image: roche,
-      title: "Lab Testing",
-      description: "Automated laboratory testing with Roche Cobas systems.",
-      link: "/services/lab-tests",
-    },
-    {
-      id: 9,
-      image: labBoy,
-      title: "Clinical Research",
-      description: "Participate in cutting-edge medical research studies.",
-      link: "/services/research",
-    },
-    
-  ];
-
-  const filteredServices =
-    activeTab === "all"
-      ? services
-      : services.filter((service) => service.category === activeTab);
+  const services = {
+    emergency: [
+      {
+        title: "24/7 Emergency Service",
+        description: "Round-the-clock emergency medical care for all urgent health needs.",
+        link: "/services/emergency"
+      },
+      {
+        title: "24/7 Ambulance Service",
+        description: "Quick response ambulance service equipped with modern life-support systems.",
+        link: "/services/ambulance"
+      }
+    ],
+    clinicalDepartments: [
+      {
+        title: "Free General OPD",
+        description: "Complimentary outpatient consultations for general medical concerns.",
+        link: "/services/opd"
+      },
+      {
+        title: "Internal Medicine",
+        description: "Comprehensive care for adult diseases and chronic conditions.",
+        link: "/services/internal-medicine"
+      },
+      {
+        title: "Gynecology",
+        description: "Specialized care for women's health and reproductive system.",
+        link: "/services/gynecology"
+      },
+      {
+        title: "Orthopedics",
+        description: "Expert care for bone, joint, and musculoskeletal conditions.",
+        link: "/services/orthopedics"
+      },
+      {
+        title: "General Surgery",
+        description: "Advanced surgical procedures with experienced surgeons.",
+        link: "/services/surgery"
+      },
+      {
+        title: "ENT – HNS",
+        description: "Specialized care for ear, nose, throat, and head-neck conditions.",
+        link: "/services/ent"
+      },
+      {
+        title: "Pediatrics",
+        description: "Comprehensive healthcare for infants, children, and adolescents.",
+        link: "/services/pediatrics"
+      }
+    ],
+    diagnostics: [
+      {
+        title: "Radio-Imaging Diagnostic",
+        description: "Advanced imaging services including DR System X-ray and 4D Scan Ultrasound.",
+        link: "/services/radio-imaging"
+      },
+      {
+        title: "Lab Diagnostic",
+        description: "Comprehensive laboratory testing and diagnostic services.",
+        link: "/services/lab"
+      }
+    ],
+    patientCare: [
+      {
+        title: "General Ward",
+        description: "Comfortable inpatient facilities with round-the-clock care.",
+        link: "/services/general-ward"
+      },
+      {
+        title: "Post-Op Ward",
+        description: "Specialized care for post-operative recovery and monitoring.",
+        link: "/services/post-op"
+      },
+      {
+        title: "Nursing Care",
+        description: "Professional nursing services with compassionate care.",
+        link: "/services/nursing"
+      }
+    ],
+    support: [
+      {
+        title: "Pharmacy",
+        description: "24/7 pharmacy services with a wide range of medications.",
+        link: "/services/pharmacy"
+      },
+      {
+        title: "Supportive Care",
+        description: "Additional support services for comprehensive patient care.",
+        link: "/services/support"
+      }
+    ]
+  };
 
   const categories = [
-    { id: "all", name: "All Services" },
-    { id: "diagnostics", name: "Diagnostics" },
-    { id: "imaging", name: "Imaging" },
-    { id: "treatment", name: "Treatment" },
+    { id: 'all', name: 'All Services' },
+    { id: 'emergency', name: 'Emergency Services' },
+    { id: 'clinicalDepartments', name: 'Clinical Departments' },
+    { id: 'diagnostics', name: 'Diagnostics' },
+    { id: 'patientCare', name: 'Patient Care' },
+    { id: 'support', name: 'Support Services' }
   ];
+
+  const getAllServices = () => {
+    if (activeCategory === 'all') {
+      return Object.values(services).flat();
+    }
+    return services[activeCategory] || [];
+  };
 
   return (
     <div className="pt-32 pb-20">
       {/* Hero Section */}
       <section className="relative bg-primary text-white py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-  <img
-  src="https://www.teensyideas.com/wp-content/uploads/2022/10/temple3-min-1-1536x1038.jpg"
-    alt="Contact Us"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute inset-0 bg-primary opacity-70"></div>
-</div>
+        <div className="absolute inset-0 z-0">
+          <img src={h3} alt="Services" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary opacity-70"></div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -124,132 +131,89 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Medical Services
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
             <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg mb-8">
-              Medina offers a comprehensive range of medical services to meet
-              all your healthcare needs. Our team of specialists uses
-              state-of-the-art equipment to provide the highest quality care.
+              Comprehensive healthcare services delivered with excellence and compassion
             </p>
           </motion.div>
         </div>
-
-      
       </section>
 
-      {/* Services Categories */}
-      <ServiceSection services={services} />
-
-      {/* Featured Service */}
+      {/* Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="rounded-lg overflow-hidden shadow-xl"
-            >
-              <img
-                src={mri}
-                alt="Advanced MRI Machine"
-                className="w-full h-auto"
-              />
-            </motion.div>
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-5 py-2 rounded-lg text-sm font-medium border transition-all duration-300 ${activeCategory === category.id
+                  ? 'bg-primary text-white border-primary'
+                  : 'bg-white text-gray-700 border-gray-200 hover:border-primary hover:text-primary'
+                  }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold mb-6 text-gray-800">
-                Advanced Diagnostic Imaging
-              </h2>
-              <div className="w-20 h-1 bg-primary mb-6"></div>
-              <p className="text-gray-600 mb-6">
-                Our state-of-the-art diagnostic imaging center features the
-                latest technology to provide accurate and detailed images for
-                precise diagnosis. Our team of radiologists and technicians are
-                highly trained to ensure you receive the highest quality care.
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {getAllServices().map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg p-6 border-2 border-gray-200"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <h3 className="text-base font-semibold text-gray-800 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Additional Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-16"
+          >
+            <div className="max-w-3xl mx-auto bg-white  rounded-lg p-8 border-2 border-gray-200 ">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Quality Healthcare Services</h2>
+              <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+              <p className="text-gray-600 mb-8 text-center">
+                Our comprehensive range of medical services is delivered by experienced healthcare professionals using state-of-the-art equipment. We are committed to providing accessible and affordable healthcare to our community.
               </p>
-
-              <ul className="space-y-3 mb-8">
-                {[
-                  "MRI",
-                  "CT Scan",
-                  "X-Ray",
-                  "Ultrasound",
-                  "Mammography",
-                  "Bone Density Scanning",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <AnimatedButton>Learn More</AnimatedButton>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold mb-6"
-            >
-              Need a Specialized Service?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-gray-600 mb-8"
-            >
-              Our team of specialists is ready to provide personalized care
-              tailored to your specific health needs. Contact us today to
-              schedule a consultation or learn more about our services.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <AnimatedButton>Contact Us</AnimatedButton>
-              <Link to="/appointments">
-                <AnimatedButton>Book Appointment</AnimatedButton>
-              </Link>
-            </motion.div>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="p-6 rounded-lg bg-primary/5 border border-primary/10 text-center transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-2xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-gray-700">Emergency Care</div>
+                </div>
+                <div className="p-6 rounded-lg bg-primary/5 border border-primary/10 text-center transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-2xl font-bold text-primary mb-2">Expert</div>
+                  <div className="text-gray-700">Medical Team</div>
+                </div>
+                <div className="p-6 rounded-lg bg-primary/5 border border-primary/10 text-center transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-2xl font-bold text-primary mb-2">Modern</div>
+                  <div className="text-gray-700">Facilities</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
   );
 };
 
-export default Services;
+export default ServicesPage;

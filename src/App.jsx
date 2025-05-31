@@ -4,8 +4,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
-
-
+import Events from "./pages/Events"
 import Contact from "./pages/Contact"
 import GalleryPage from "./pages/Gallerypage"
 import Appointments from "./pages/Appointments"
@@ -45,8 +44,7 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/team" element={<TeamPage />} />
-
-
+            <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/appointments" element={<Appointments />} />

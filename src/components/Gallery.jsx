@@ -18,43 +18,43 @@ const Gallery = () => {
     {
       id: 1,
       src: gb1,
-      
-      
+
+
     },
     {
       id: 2,
       src: gb2,
-      
-     
+
+
     },
     {
       id: 3,
       src: gb3,
-     
-      
+
+
     },
     {
       id: 4,
       src: gb4,
-      
-     
+
+
     },
     {
       id: 5,
       src: gb5,
-    
+
     },
     {
       id: 6,
       src: gb6,
-     
-      
+
+
     },
     {
       id: 7,
       src: gb7,
-      
-     
+
+
     }
   ]
 
@@ -78,10 +78,10 @@ const Gallery = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Gallery</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Medical Schemes</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our state-of-the-art medical facilities and equipment through our photo gallery.
+            Explore our state-of-the-art medical facilities and equipment through our medical schemes.
           </p>
         </motion.div>
 
@@ -98,16 +98,14 @@ const Gallery = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              className={`rounded-lg overflow-hidden shadow-md cursor-pointer transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-                image.aspect === "wide" ? "sm:col-span-2" : 
+              className={`rounded-lg overflow-hidden shadow-md cursor-pointer transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${image.aspect === "wide" ? "sm:col-span-2" :
                 image.aspect === "tall" ? "row-span-2" : ""
-              }`}
+                }`}
               onClick={() => openLightbox(image)}
             >
-              <div className={`relative overflow-hidden ${
-                image.aspect === "tall" ? "h-full" : 
+              <div className={`relative overflow-hidden ${image.aspect === "tall" ? "h-full" :
                 image.aspect === "wide" ? "h-64" : "h-64 sm:h-80"
-              }`}>
+                }`}>
                 <img
                   src={image.src}
                   // alt={image.alt}
