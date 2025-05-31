@@ -186,7 +186,7 @@ const Header = () => {
           ease: [0.4, 0, 0.2, 1]
         }
       }}
-      className={`fixed w-full z-50 transition-all duration-500 border-b-2 border-gray-200 ${scrolled ? "bg-white py-1 md:py-2" : "bg-white py-2 md:py-3"
+      className={`fixed w-full z-50 transition-all duration-500 border-b-2 border-gray-200 ${scrolled ? "bg-white py-0.5 md:py-1" : "bg-white py-1 md:py-2"
         }`}
     >
       <div className="container mx-auto px-2 md:px-4">
@@ -198,7 +198,7 @@ const Header = () => {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="flex flex-col md:flex-row justify-between items-center mb-2 md:mb-4 overflow-hidden"
+              className="flex flex-col md:flex-row justify-between items-center mb-1 md:mb-2 overflow-hidden"
             >
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -206,7 +206,7 @@ const Header = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex items-center"
               >
-                <img src={logo} alt="M.R.S. Pranami Hospital" className="h-8 md:h-12" />
+                <img src={logo} alt="M.R.S. Pranami Hospital" className="h-6 md:h-10" />
                 <p className="text-lg md:text-xl font-semibold ml-2"></p>
               </motion.div>
 
@@ -214,7 +214,7 @@ const Header = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                className="flex flex-col md:flex-row items-center mt-2 md:mt-0 space-y-1 md:space-y-0 md:space-x-4 lg:space-x-6"
+                className="flex flex-col md:flex-row items-center mt-1 md:mt-0 space-y-1 md:space-y-0 md:space-x-4 lg:space-x-6"
               >
                 <div className="flex items-center">
                   <div className="hidden md:block bg-primary rounded-full p-2 mr-2 md:mr-3">
@@ -266,11 +266,11 @@ const Header = () => {
                 <div className="flex items-center">
                   <Link
                     to="/lab-reports"
-                    className="flex items-center bg-primary rounded-lg px-2  md:px-4 md:py-2 text-white transition-colors duration-300 text-xs md:text-sm"
+                    className="flex items-center bg-primary rounded-lg px-1.5 py-0.5 md:px-4 md:py-2 text-white transition-colors duration-300 text-[10px] md:text-sm"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-3 w-3 md:h-4 md:w-4 mr-1"
+                      className="h-2.5 w-2.5 md:h-4 md:w-4 mr-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -319,10 +319,9 @@ const Header = () => {
               <img
                 src={logo}
                 alt="M.R.S. Pranami Hospital"
-                className={`h-8 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                className={`h-6 md:h-7 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                   }`}
               />
-              <p className="text-sm md:text-base text-white font-semibold ml-2"></p>
             </motion.div>
 
             <div className="hidden md:flex">
@@ -330,22 +329,40 @@ const Header = () => {
                 <Link
                   key={index}
                   to={link.path}
-                  className={`px-3 lg:px-4 py-3 md:py-4 text-white transition-colors duration-300 relative group ${location.pathname === link.path ? "bg-secondary" : ""
+                  className={`relative flex items-center px-3 lg:px-4 py-2 md:py-3 text-white transition-all duration-300 ${location.pathname === link.path ? "text-white" : "text-white/90 hover:text-white"
                     }`}
                 >
-                  <span className="text-sm md:text-base">{link.name}</span>
+                  <span className="relative z-10 text-sm md:text-base -translate-y-0.5">{link.name}</span>
+
+                  {/* Active state underline */}
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-white"
+                    className="absolute bottom-1 left-0 w-full h-0.5 bg-white origin-left"
                     initial={{ scaleX: 0 }}
-                    animate={{ scaleX: location.pathname === link.path ? 1 : 0 }}
-                    exit={{ scaleX: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    animate={{
+                      scaleX: location.pathname === link.path ? 1 : 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30
+                      }
+                    }}
                   />
+
+                  {/* Hover state underline */}
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-white opacity-0 group-hover:opacity-100"
+                    className="absolute bottom-1 left-0 w-full h-0.5 bg-white origin-left"
                     initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    whileHover={{
+                      scaleX: 1,
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 35
+                      }
+                    }}
+                    animate={{
+                      opacity: location.pathname === link.path ? 0 : 1
+                    }}
                   />
                 </Link>
               ))}
@@ -356,12 +373,12 @@ const Header = () => {
               <div className={`md:hidden ${hideContact ? "block" : "hidden"}`}>
                 <Link
                   to="/lab-reports"
-                  className="flex items-center p-2 text-white"
+                  className="flex items-center p-1 text-white"
                   aria-label="Lab Reports"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
+                    className="h-3 w-3"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -377,14 +394,14 @@ const Header = () => {
               </div>
 
               <button
-                className="md:hidden text-white p-3 focus:outline-none"
+                className="md:hidden text-white p-2 focus:outline-none"
                 onClick={toggleMenu}
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -394,7 +411,7 @@ const Header = () => {
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -426,7 +443,7 @@ const Header = () => {
           {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden bg-white bg-opacity-10 backdrop-blur-sm rounded-b-md">
-              <div className="grid grid-cols-3 gap-1 p-2">
+              <div className="grid grid-cols-4 gap-1 p-1.5">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={index}
@@ -436,29 +453,29 @@ const Header = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`flex flex-col items-center justify-center p-2 rounded-lg ${location.pathname === link.path ? "bg-secondary" : "bg-white bg-opacity-10"
+                      className={`flex flex-col items-center justify-center p-1.5 rounded-lg ${location.pathname === link.path ? "bg-secondary" : "bg-white bg-opacity-10"
                         } transition-colors duration-300`}
                       onClick={() => setIsOpen(false)}
                     >
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-1"
+                        className="w-6 h-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-0.5"
                       >
                         {link.icon}
                       </motion.div>
-                      <span className="text-white text-xs font-medium">{link.name}</span>
+                      <span className="text-white text-[10px] font-medium">{link.name}</span>
                     </Link>
                   </motion.div>
                 ))}
               </div>
 
               {/* Mobile contact info */}
-              <div className="px-3 py-2 bg-white bg-opacity-10 mt-1 rounded-lg mx-2 mb-3">
-                <div className="flex items-center mb-2">
+              <div className="px-2 py-1.5 bg-white bg-opacity-10 mt-1 rounded-lg mx-2 mb-2">
+                <div className="flex items-center mb-1.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-white mr-2"
+                    className="h-3 w-3 text-white mr-1.5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -470,14 +487,14 @@ const Header = () => {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <a href="tel:+97725580930" className="text-white text-xs">
+                  <a href="tel:+97725580930" className="text-white text-[10px]">
                     +977 9764453354
                   </a>
                 </div>
                 <div className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-white mr-2"
+                    className="h-3 w-3 text-white mr-1.5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -495,14 +512,14 @@ const Header = () => {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span className="text-white text-xs">Muktidham, Itahari, Sunsari, Nepal</span>
+                  <span className="text-white text-[10px]">Muktidham, Itahari, Sunsari, Nepal</span>
                 </div>
 
                 {/* Lab Report Link - Mobile */}
-                <div className="mt-2">
+                <div className="mt-1.5">
                   <Link
                     to="/lab-reports"
-                    className="flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg py-1 px-3 transition-colors duration-300 text-xs"
+                    className="flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg py-1 px-2 transition-colors duration-300 text-[10px]"
                     onClick={() => setIsOpen(false)}
                   >
                     <svg
