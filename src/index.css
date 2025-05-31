@@ -4,11 +4,11 @@
 
 :root {
   --primary: #003366e9;
-  --secondary:  #98c5f5fd;
+  --secondary: #98c5f5fd;
   --accent: #fff8f0;
   --light: #ffffff;
-  --dark:  #212529;
- --unique: #FF6B35;
+  --dark: #212529;
+  --unique: #FF6B35;
 
 }
 
@@ -68,9 +68,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -85,10 +87,12 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.05);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -103,9 +107,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -120,6 +126,7 @@ body {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -135,6 +142,7 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+
   100% {
     transform: translateX(100%);
     opacity: 0;
@@ -149,6 +157,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -243,6 +252,7 @@ body {
 
 /* Improved touch targets for mobile */
 @media (max-width: 640px) {
+
   button,
   a {
     min-height: 44px;

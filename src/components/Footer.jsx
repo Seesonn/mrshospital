@@ -142,34 +142,34 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/pediatrics"
+                  to="/services/radiology"
                   className="hover:text-gray-300 transition-colors flex items-center"
                 >
-                  <span className="mr-2">›</span> Pediatrics
+                  <span className="mr-2">›</span> Radiology
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/services/pulmonology"
+                  to="/services/nursing"
                   className="hover:text-gray-300 transition-colors flex items-center"
                 >
-                  <span className="mr-2">›</span> Pulmonology
+                  <span className="mr-2">›</span> Nursing Care
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/services/traumatology"
+                  to="/services/pathology"
                   className="hover:text-gray-300 transition-colors flex items-center"
                 >
-                  <span className="mr-2">›</span> Traumatology
+                  <span className="mr-2">›</span> Pathology
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/services/diagnostics"
+                  to="/services/lab-tests"
                   className="hover:text-gray-300 transition-colors flex items-center"
                 >
-                  <span className="mr-2">›</span> Diagnostics
+                  <span className="mr-2">›</span> Lab Testing
                 </Link>
               </li>
             </ul>

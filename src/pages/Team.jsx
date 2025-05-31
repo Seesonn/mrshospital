@@ -50,14 +50,14 @@ const TeamPage = () => {
       title: "Consultant ENT-Head & Neck Surgeon",
       qualifications: ["MBBS (TU)", "MS (TU)"],
       nmcNo: "23957",
-      image: rupesh // Add image path when available
+      image: "https://imgs.search.brave.com/CgukyxoAv0f5COoZNA56h1b0lZFYSC8dZi2SE8Ywzn4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMi8w/NS8wMS8wMC8zNi9j/aGFyYWN0ZXItNzE2/NjU1OF8xMjgwLnBu/Zw"// Add image path when available
     },
     {
       name: "Dr. Kishor Kumar Poudel",
       title: "Radiologist",
       qualifications: ["MBBS (CMC, Vellore)", "DMRD (RGUHS, Bangalore)"],
       nmcNo: "13362",
-      image: rupesh // Add image path when available
+      image: "https://imgs.search.brave.com/CgukyxoAv0f5COoZNA56h1b0lZFYSC8dZi2SE8Ywzn4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMi8w/NS8wMS8wMC8zNi9j/aGFyYWN0ZXItNzE2/NjU1OF8xMjgwLnBu/Zw" // Add image path when available
     }
   ]
 
