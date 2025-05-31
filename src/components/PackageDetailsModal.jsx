@@ -9,7 +9,7 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
 
   if (!pkg) return null
 
- 
+
   const groupTestsByCategory = (tests) => {
     const categories = {
       "Blood Tests": ["CBC", "RBC Count", "WBC Count", "Hemoglobin", "Platelet Count", "ESR", "AEC"],
@@ -24,7 +24,7 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
       "Other Tests": ["Urine R/E", "Stool R/E", "Doctor Consultation"],
     }
 
-   
+
     const groupedTests = {}
 
     Object.keys(categories).forEach((category) => {
@@ -37,7 +37,7 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
       }
     })
 
-    
+
     const categorizedTests = Object.values(groupedTests).flat()
     const uncategorizedTests = pkg.testDetails.filter((test) => !categorizedTests.includes(test))
 
@@ -68,11 +68,11 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", damping: 20 }}
-            className="bg-white border-2 border-gray-200 w-full max-w-4xl max-h-[90vh] flex flex-col my-8"
+            className="bg-white rounded-lg border-2 border-gray-200 w-full max-w-4xl max-h-[90vh] flex flex-col my-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className={`bg-primary text-white p-6`}>
+            <div className={`bg-primary text-white p-6 rounded-t-lg`}>
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold">{pkg.name}</h2>
@@ -110,21 +110,19 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
             {/* Tabs */}
             <div className="flex  rounded-xl border-b border-gray-200">
               <button
-                className={`flex-1 py-3 px-4 text-center font-medium ${
-                  activeTab === "details"
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
+                className={`flex-1 py-3 px-4 text-center font-medium ${activeTab === "details"
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-gray-500 hover:text-gray-700"
+                  }`}
                 onClick={() => setActiveTab("details")}
               >
                 Package Details
               </button>
               <button
-                className={`flex-1 py-3 px-4 text-center font-medium ${
-                  activeTab === "booking"
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
+                className={`flex-1 py-3 px-4 text-center font-medium ${activeTab === "booking"
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-gray-500 hover:text-gray-700"
+                  }`}
                 onClick={() => setActiveTab("booking")}
               >
                 Booking Process
@@ -196,10 +194,10 @@ const PackageDetailsModal = ({ isOpen, onClose, package: pkg }) => {
               ) : (
                 <div className="space-y-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4">How to Book This Package</h3>
-                  
-                
-                  
-                   <h4 className="font-semibold text-green-800 mb-2">Available soon</h4>
+
+
+
+                  <h4 className="font-semibold text-green-800 mb-2">Available soon</h4>
                 </div>
               )}
             </div>

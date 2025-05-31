@@ -67,10 +67,10 @@ const PackageCard = ({ package: pkg, onViewDetails, onBookNow }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white rounded-xl border-2 border-gray-200 transition-all duration-300 package-card h-full flex flex-col"
+      className="bg-white rounded-lg border-2 border-gray-200 transition-all duration-300 package-card h-full flex flex-col"
     >
-      <div className={`${colorClasses.bg} text-white p-6`}>
-        <div className="flex justify-between items-start">
+      <div className={`${colorClasses.bg} text-white p-6 rounded-t-lg`}>
+        <div className="flex  justify-between items-start">
           <div>
             <h3 className="text-xl font-bold mb-1">{pkg.name}</h3>
             <p className="opacity-90 text-sm">{pkg.description}</p>
