@@ -1,15 +1,22 @@
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 const TeamCard = ({ doctor }) => {
+  const [showAllQualifications, setShowAllQualifications] = useState(false);
+  const hasMoreQualifications = doctor.qualifications.length > 2;
+  const displayQualifications = showAllQualifications
+    ? doctor.qualifications
+    : doctor.qualifications.slice(0, 2);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20px" }}
-      className="bg-white overflow-hidden flex flex-col border border-gray-200 rounded-lg "
+      className="bg-white overflow-hidden flex flex-col border border-gray-200 rounded-lg max-w-[250px] mx-auto w-full"
     >
       {/* Image container */}
-      <div className="relative w-full  overflow-hidden">
+      <div className="relative w-full max-w-[250px] h-[200px] mx-auto overflow-hidden">
         {doctor.image ? (
           <motion.img
             src={doctor.image}
@@ -48,17 +55,25 @@ const TeamCard = ({ doctor }) => {
         <p className="text-xs text-primary font-medium mb-1">
           {doctor.title}
         </p>
-        
+
         {/* Qualifications - Smaller but fully visible */}
         <div className="space-y-1 text-[11px] text-gray-600">
-          {doctor.qualifications.map((qualification, index) => (
+          {displayQualifications.map((qualification, index) => (
             <p key={index} className="flex items-start">
               <span className="text-primary mr-1 text-[8px] mt-[3px]">•</span>
               <span className="leading-tight">{qualification}</span>
             </p>
           ))}
+          {hasMoreQualifications && (
+            <button
+              onClick={() => setShowAllQualifications(!showAllQualifications)}
+              className="text-primary hover:text-primary-dark font-medium text-[11px] mt-1 focus:outline-none"
+            >
+              {showAllQualifications ? "Show Less" : "See More"}
+            </button>
+          )}
         </div>
-        
+
         {/* NMC Number (if exists) */}
         {doctor.nmcNo && (
           <p className="text-[10px] font-medium text-gray-700 pt-1.5 border-t border-gray-100 mt-1.5">
