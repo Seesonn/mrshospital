@@ -262,15 +262,15 @@ const Header = () => {
                   <p className="text-xs md:text-sm text-gray-600">Muktidham, Itahari, Sunsari, Nepal</p>
                 </div>
 
-                {/* Lab Report Button - Smaller in mobile */}
-                <div className="flex items-center">
+                {/* Lab Report Button - Desktop only */}
+                <div className="hidden md:flex items-center">
                   <Link
                     to="/lab-reports"
-                    className="flex items-center bg-primary rounded-lg px-1.5 py-0.5 md:px-4 md:py-2 text-white transition-colors duration-300 text-[10px] md:text-sm"
+                    className="flex items-center bg-primary rounded-lg px-4 py-2 text-white transition-colors duration-300 text-sm"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-2.5 w-2.5 md:h-4 md:w-4 mr-1"
+                      className="h-4 w-4 mr-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -304,25 +304,74 @@ const Header = () => {
         >
           <div className={`flex justify-between items-center px-2 md:px-4 transition-all duration-300`}>
             {/* Show logo when contact is hidden */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: hideContact ? 1 : 0,
-                scale: hideContact ? 1 : 0.8,
-                transition: {
-                  duration: 0.3,
-                  ease: [0.4, 0, 0.2, 1]
-                }
-              }}
-              className="flex items-center"
-            >
-              <img
-                src={logo}
-                alt="M.R.S. Pranami Hospital"
-                className={`h-6 md:h-7 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                  }`}
-              />
-            </motion.div>
+            <div className="flex items-center">
+              {/* Lab Report Link - Mobile Only */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: hideContact ? 0 : 1,
+                  scale: hideContact ? 0.8 : 1,
+                  transition: {
+                    duration: 0.3,
+                    ease: [0.4, 0, 0.2, 1]
+                  }
+                }}
+                className="md:hidden absolute left-8"
+              >
+                <Link
+                  to="/lab-reports"
+                  className="relative text-white text-[11px] flex items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3 w-3 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  <span className="relative">Lab Reports</span>
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-[1px] bg-white origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{
+                      scaleX: 1,
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 35
+                      }
+                    }}
+                  />
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: hideContact ? 1 : 0,
+                  scale: hideContact ? 1 : 0.8,
+                  transition: {
+                    duration: 0.3,
+                    ease: [0.4, 0, 0.2, 1]
+                  }
+                }}
+                className="flex items-center ml-auto md:ml-0"
+              >
+                <img
+                  src={logo}
+                  alt="M.R.S. Pranami Hospital"
+                  className={`h-6 md:h-7 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                    }`}
+                />
+              </motion.div>
+            </div>
 
             <div className="hidden md:flex">
               {navLinks.map((link, index) => (
@@ -369,30 +418,6 @@ const Header = () => {
             </div>
 
             <div className="flex items-center">
-              {/* Lab Report Link - Mobile (shown when header is collapsed) */}
-              <div className={`md:hidden ${hideContact ? "block" : "hidden"}`}>
-                <Link
-                  to="/lab-reports"
-                  className="flex items-center p-1 text-white"
-                  aria-label="Lab Reports"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </Link>
-              </div>
-
               <button
                 className="md:hidden text-white p-2 focus:outline-none"
                 onClick={toggleMenu}
