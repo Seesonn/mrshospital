@@ -52,15 +52,13 @@ const FloatingAppointmentButton = () => {
 
   return (
     <div
-      className={`fixed bottom-6 left-6 z-50 transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)] transform ${
-        isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-95"
-      }`}
+      className={`fixed bottom-6 left-6 z-50 transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)] transform ${isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-95"
+        }`}
     >
       <Link
         to="/appointments"
-        className={`flex items-center justify-center bg-primary hover:bg-secondary text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-          isCompact ? "p-3" : "px-5 py-3 gap-3"
-        } hover:scale-105 active:scale-95`}
+        className={`flex items-center justify-center bg-primary hover:bg-secondary text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isCompact ? "p-2" : "px-3 py-2 gap-2"
+          } hover:scale-105 active:scale-95`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onFocus={handleMouseEnter}
@@ -68,9 +66,8 @@ const FloatingAppointmentButton = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-5 w-5 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-            isCompact ? "scale-110" : "scale-100"
-          }`}
+          className={`h-4 w-4 transform transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isCompact ? "scale-110" : "scale-100"
+            }`}
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -81,9 +78,8 @@ const FloatingAppointmentButton = () => {
           />
         </svg>
         <span
-          className={`font-medium whitespace-nowrap transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden ${
-            isCompact ? "max-w-0 opacity-0 ml-0" : "max-w-40 opacity-100"
-          }`}
+          className={`font-medium whitespace-nowrap transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden ${isCompact ? "max-w-0 opacity-0 ml-0" : "max-w-32 opacity-100 text-[11px]"
+            }`}
         >
           Book Appointment
         </span>
