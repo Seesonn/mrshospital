@@ -93,19 +93,19 @@ const Footer = () => {
               <li>
                 <Link to="/services/cardiology" className="hover:text-secondary transition-colors flex items-center group">
                   <span className="mr-3 text-secondary">›</span>
-                  <span>Cardiology</span>
+                  <span>Free General OPD</span>
                 </Link>
               </li>
               <li>
                 <Link to="/services/neurology" className="hover:text-secondary transition-colors flex items-center group">
                   <span className="mr-3 text-secondary">›</span>
-                  <span>Neurology</span>
+                  <span>Clinical Departments</span>
                 </Link>
               </li>
               <li>
                 <Link to="/services/radiology" className="hover:text-secondary transition-colors flex items-center group">
                   <span className="mr-3 text-secondary">›</span>
-                  <span>Radiology</span>
+                  <span>Radio-Imaging Diagnostic</span>
                 </Link>
               </li>
               <li>
@@ -117,7 +117,7 @@ const Footer = () => {
               <li>
                 <Link to="/services/pathology" className="hover:text-secondary transition-colors flex items-center group">
                   <span className="mr-3 text-secondary">›</span>
-                  <span>Pathology</span>
+                  <span>Pharmacy</span>
                 </Link>
               </li>
               <li>

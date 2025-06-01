@@ -50,12 +50,7 @@ const Gallery = () => {
 
 
     },
-    {
-      id: 7,
-      src: gb7,
 
-
-    }
   ]
 
   const openLightbox = (image) => {

@@ -100,31 +100,28 @@ const Contact = () => {
           <div className="flex flex-wrap justify-center mb-10 gap-3">
             <button
               onClick={() => setActiveTab("contact")}
-              className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
-                activeTab === "contact"
+              className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${activeTab === "contact"
                   ? "bg-primary text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+                }`}
             >
               Contact Form
             </button>
             <button
               onClick={() => setActiveTab("locations")}
-              className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
-                activeTab === "locations"
+              className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${activeTab === "locations"
                   ? "bg-primary text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+                }`}
             >
               Our Locations
             </button>
             <button
               onClick={() => setActiveTab("faq")}
-              className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
-                activeTab === "faq"
+              className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${activeTab === "faq"
                   ? "bg-primary text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+                }`}
             >
               FAQs
             </button>
@@ -269,7 +266,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-1">Address</h3>
-                      <p className="text-gray-600">Muktidham, Itahari </p>
+                      <p className="text-gray-600">Muktidham, Itahari, Sunsari, Koshi Province, NEPAL </p>
                     </div>
                   </div>
 
@@ -339,13 +336,13 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-1">
-                      Available 
+                        Available
                       </h3>
                       <p className="text-gray-600">
-                       24/7 for medical emergencies
-                      
+                        24/7 for medical emergencies
+
                       </p>
-                     
+
                     </div>
                   </div>
                 </div>
