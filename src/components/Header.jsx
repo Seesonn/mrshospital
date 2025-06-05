@@ -197,7 +197,7 @@ const Header = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="flex items-center"
               >
-                <img src={logo} alt="M.R.S. Pranami Hospital" className="h-6 md:h-10" />
+                <img src={logo} alt="M.R.S. Pranami Hospital" className="h-8 md:h-12" />
                 <p className="text-lg md:text-xl font-semibold ml-2"></p>
               </motion.div>
 
@@ -358,7 +358,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="M.R.S. Pranami Hospital"
-                  className={`h-6 md:h-7 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                  className={`h-8 md:h-10 bg-white p-1 rounded-md transition-all duration-300 ${hideContact ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                     }`}
                 />
               </motion.div>
